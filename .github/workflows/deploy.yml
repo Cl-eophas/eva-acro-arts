@@ -28,7 +28,9 @@ jobs:
           cache-dependency-path: client/package-lock.json
       - name: Install dependencies
         working-directory: client
-        run: npm install
+        run: |
+          npm install
+          npm install --no-save @rollup/rollup-linux-x64-gnu@4.63.1
       - name: Build
         working-directory: client
         env:
