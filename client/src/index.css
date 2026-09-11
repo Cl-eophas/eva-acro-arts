@@ -1,0 +1,260 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2.125rem;
+  --text-4xl: 2.625rem;
+  --text-5xl: 3.125rem;
+  --text-6xl: 3.75rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: max(5.75rem, calc(4.25rem + env(safe-area-inset-top, 0px)));
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+body {
+  min-width: 0;
+  font-size: var(--text-base);
+  line-height: 1.6;
+}
+
+img,
+video,
+canvas {
+  max-width: 100%;
+}
+
+video {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  overflow-wrap: break-word;
+}
+
+#about,
+#training,
+#performances,
+#trailer,
+#gallery,
+#merchandise,
+#book {
+  scroll-margin-top: max(5.75rem, calc(4.25rem + env(safe-area-inset-top, 0px)));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  @apply bg-ink-950 text-white font-sans antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light theme — page surfaces only. Photo overlays, hero, and gradient buttons stay as-is. */
+html.light {
+  color-scheme: light;
+}
+
+html.light body {
+  @apply bg-[#fffdf6] text-ink-800;
+}
+
+html.light .bg-ink-950 {
+  background-color: #fffdf6;
+}
+html.light .bg-ink-900 {
+  background-color: #fff6df;
+}
+html.light .bg-ink-950\/90 {
+  background-color: rgb(255 253 246 / 0.9);
+}
+html.light .bg-ink-950\/95 {
+  background-color: rgb(255 253 246 / 0.95);
+}
+
+html.light header.fixed {
+  background-color: rgb(255 253 246 / 0.92);
+  background-image: none;
+}
+
+html.light .text-white { color: #1a1029; }
+html.light .text-white\/90 { color: rgb(26 16 41 / 0.9); }
+html.light .text-white\/80 { color: rgb(26 16 41 / 0.8); }
+html.light .text-white\/75 { color: rgb(26 16 41 / 0.75); }
+html.light .text-white\/70 { color: rgb(26 16 41 / 0.7); }
+html.light .text-white\/60 { color: rgb(26 16 41 / 0.6); }
+html.light .text-white\/50 { color: rgb(26 16 41 / 0.5); }
+html.light .text-white\/40 { color: rgb(26 16 41 / 0.4); }
+
+html.light .border-white\/5 { border-color: rgb(26 16 41 / 0.08); }
+html.light .border-white\/10 { border-color: rgb(26 16 41 / 0.12); }
+html.light .border-white\/15 { border-color: rgb(26 16 41 / 0.15); }
+html.light .border-white\/20 { border-color: rgb(26 16 41 / 0.2); }
+html.light .border-white\/30 { border-color: rgb(26 16 41 / 0.25); }
+
+html.light .bg-white\/5 { background-color: rgb(26 16 41 / 0.04); }
+html.light .bg-white\/\[0\.08\] { background-color: rgb(26 16 41 / 0.06); }
+html.light .placeholder-white\/30::placeholder { color: rgb(26 16 41 / 0.35); }
+
+html.light .bg-gradient-to-r.text-white,
+html.light .from-magenta-600.text-white,
+html.light .from-aqua-500.text-white {
+  color: #fff;
+}
+
+html.light #home.bg-ink-950 {
+  background-color: #0a0611;
+}
+
+html.light #home .text-white,
+html.light #home .text-white\/90,
+html.light #home .text-white\/60,
+html.light [data-keep-dark] .text-white,
+html.light [data-keep-dark] .text-white\/90,
+html.light [data-keep-dark] .text-white\/75,
+html.light [data-keep-dark] .text-white\/70 {
+  color: #fff;
+}
+
+html.light #home .border-white\/30,
+html.light #home .border-white\/40,
+html.light [data-keep-dark] .border-white\/40 {
+  border-color: rgb(255 255 255 / 0.3);
+}
+
+html.light #home .bg-white\/5,
+html.light [data-keep-dark] .bg-white\/10,
+html.light [data-keep-dark] .bg-white\/15,
+html.light [data-keep-dark] .hover\:bg-white\/20:hover {
+  background-color: rgb(255 255 255 / 0.1);
+}
+
+::selection {
+  @apply bg-magenta-600 text-white;
+}
+
+.font-script {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+}
+
+/* Shared typography scale. These deliberate overrides keep the existing Tailwind
+   component classes consistent without altering layout or content. */
+.text-xs { font-size: var(--text-xs); line-height: 1.4; }
+.text-sm { font-size: var(--text-sm); line-height: 1.5; }
+.text-base { font-size: var(--text-base); line-height: 1.6; }
+.text-lg { font-size: var(--text-lg); line-height: 1.55; }
+.text-xl { font-size: var(--text-xl); line-height: 1.45; }
+.text-2xl { font-size: var(--text-2xl); line-height: 1.25; }
+.text-3xl { font-size: var(--text-3xl); line-height: 1.15; }
+.text-4xl { font-size: var(--text-4xl); line-height: 1.1; }
+.text-5xl { font-size: var(--text-5xl); line-height: 1.05; }
+.text-6xl { font-size: var(--text-6xl); line-height: 1; }
+
+@media (min-width: 640px) {
+  .sm\:text-sm { font-size: var(--text-sm); line-height: 1.5; }
+  .sm\:text-base { font-size: var(--text-base); line-height: 1.6; }
+  .sm\:text-lg { font-size: var(--text-lg); line-height: 1.55; }
+  .sm\:text-2xl { font-size: var(--text-2xl); line-height: 1.25; }
+  .sm\:text-3xl { font-size: var(--text-3xl); line-height: 1.15; }
+  .sm\:text-4xl { font-size: var(--text-4xl); line-height: 1.1; }
+}
+
+@media (min-width: 768px) {
+  .md\:text-5xl { font-size: var(--text-5xl); line-height: 1.05; }
+  .md\:text-6xl { font-size: var(--text-6xl); line-height: 1; }
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #FF944D;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: #FFDE58;
+  color: #000000;
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+  border-radius: 0 0 0.5rem 0;
+}
+.skip-link:focus {
+  left: 0;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0611;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#FFDE58, #FF944D);
+  border-radius: 8px;
+}
+html.light ::-webkit-scrollbar-track {
+  background: #efe8f6;
+}
+
+.text-gradient {
+  background-image: linear-gradient(135deg, #FFDE58 0%, #FFB653 50%, #FF944D 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* A restrained film-grain layer used only by the hero; it adds texture without
+   adding an image request or affecting the performer photograph. */
+.hero-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+  mix-blend-mode: soft-light;
+}
+
+/* Fill the visible screen without locking a height that crops overlay copy */
+#home {
+  min-height: 100svh;
+  min-height: 100dvh;
+}
+
+@media (max-height: 700px) {
+  #home {
+    height: auto;
+    max-height: none;
+  }
+}

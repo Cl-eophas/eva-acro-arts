@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (t === 'light' || t === 'dark') document.documentElement.className = t;
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>EVA ACRODANCE AND ART | Movement, Training &amp; Performance</title>
+    <meta name="description" content="EVA ACRODANCE AND ART brings together movement training and professional aerial and acrobatic performance for children, teens and adults." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="EVA ACRODANCE AND ART | Movement, Training &amp; Performance" />
+    <meta property="og:description" content="Movement training and professional aerial and acrobatic performance for children, teens and adults." />
+    <meta property="og:image" content="og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="og-image.jpg" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
